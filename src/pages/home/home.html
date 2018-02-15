@@ -1,0 +1,15 @@
+<ion-header>
+   <ion-navbar>
+      <ion-title>
+         KLM Carousel
+      </ion-title>
+   </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   <ion-slides #slider effect="fade" (ionSlideWillChange)="onSlideChanged()" pager="true" paginationType="bullets">
+      <ion-slide *ngFor="let slide of slides" class="swiper-no-swiping" [ngStyle]="{'background' : 'url(' + slide.imageUrl + ')', 'background-size': 'cover'}"></ion-slide>
+      <div *ngIf="currentIndex > 0" class="swiper-button-prev swiper-button-white" (click)="previousSlide()"></div>
+      <div *ngIf="currentIndex < slides.length-1" class="swiper-button-next swiper-button-white" (click)="nextSlide()"></div>
+   </ion-slides>
+</ion-content>

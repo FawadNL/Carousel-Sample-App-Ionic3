@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Editorial Carousel</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides effect="fade" (ionSlideWillChange)="onSlideChanged()" pager="true" paginationType="bullets" *ngIf="deviceType == 'mobile'">
+    <ion-slide *ngFor="let slide of allSlides" class="swiper-no-swiping" [ngStyle]="{'background' : 'url(' + slide.imageUrl + ')', 'background-size': 'cover'}">
+      <h1>
+        <ion-icon name="ios-camera"></ion-icon>
+        {{slide.title}}
+      </h1>
+    </ion-slide>
+    <div *ngIf="currentIndex > 0" class="swiper-button-prev swiper-button-white" (click)="previousSlide()"></div>
+    <div *ngIf="currentIndex < allSlides.length-1" class="swiper-button-next swiper-button-white" (click)="nextSlide()"></div>
+  </ion-slides>
+
+  <ion-slides effect="fade" (ionSlideWillChange)="onSlideChanged()" loop="true" autoplay="2000" pager="true" paginationType="bullets"
+    *ngIf="deviceType == 'large'">
+    <ion-slide *ngFor="let slide of allSlides" class="swiper-no-swiping" [ngStyle]="{'background' : 'url(' + slide.imageUrl + ')', 'background-size': 'cover'}">
+      <h1>
+        <ion-icon name="ios-camera"></ion-icon>
+        {{slide.title}}
+      </h1>
+    </ion-slide>
+    <div *ngIf="currentIndex > 0" class="swiper-button-prev swiper-button-white" (click)="previousSlide()"></div>
+    <div *ngIf="currentIndex < allSlides.length-1" class="swiper-button-next swiper-button-white" (click)="nextSlide()"></div>
+  </ion-slides>
+
+  <div>
+    <h3>Where can I get some?</h3>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+      text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+      It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+      with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+  </div>
+</ion-content>

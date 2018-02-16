@@ -12,11 +12,18 @@ page-home {
   ion-slide {
     background-size: cover;
   }
+  #slide1 {
+    display: none;
+  }
+  #slide2 {
+    display: block;
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    #slide1 {
+      display: block;
+    }
+    #slide2 {
+      display: none;
+    }
+  }
 }
-
-// .scroll-content {
-//   padding: 0px !important;
-// }
-// .swiper-slide {
-//   width: 100%;
-// }

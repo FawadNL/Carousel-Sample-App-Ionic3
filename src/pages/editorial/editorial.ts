@@ -3,16 +3,17 @@ import { NavController, Slides } from 'ionic-angular';
 import { GlobalService } from '../../app/global.service';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-editorial',
+  templateUrl: 'editorial.html'
 })
-export class HomePage {
+export class EditorialPage {
   //Ion slide instance
   @ViewChild(Slides) slides: Slides;
 
   //current index of slide
   public currentIndex: number = 0;
   public deviceType: String = '';
+
   //ion slide sample data
   public allSlides: Array<Object> = [
     {
@@ -31,7 +32,6 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public globalService: GlobalService) {
     this.deviceType = globalService.getDeviceType();
-
   }
 
   nextSlide() {
@@ -45,7 +45,6 @@ export class HomePage {
   onSlideChanged() {
     this.currentIndex = this.slides.realIndex;
   }
-
   slideChanged() {
     this.currentIndex = this.slides.realIndex;
   }

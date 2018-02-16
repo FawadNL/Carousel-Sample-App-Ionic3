@@ -1,0 +1,47 @@
+page-editorial {
+  ion-slides {
+    height: 50%;
+  }
+  .swiper-pagination-bullet {
+    background-color: #fff;
+    opacity: 1;
+    border: 2px solid #eee !important;
+    width: 10px;
+    height: 10px;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #1caae1;
+  }
+  ion-slide {
+    background-size: cover;
+  }
+  ion-slide h2 {
+    color: #266a8c;
+  }
+  ion-slide h1 ion-icon {
+    font-size: 24px;
+    vertical-align: sub;
+    padding-right: 5px;
+  }
+  .swiper-container {
+    padding-bottom: 30px;
+  }
+  h3 {
+    margin: 0;
+    padding: 0 10px;
+    color: #005b82;
+  }
+  p {
+    padding: 0 10px;
+    color: #586d78;
+  }
+  .scroll-content {
+    margin: 54px 10px;
+    padding-top: 10px;
+  }
+  ion-slide img {
+    width: 100px !important;
+    border: 5px solid #fff;
+    border-radius: 65px;
+  }
+}
